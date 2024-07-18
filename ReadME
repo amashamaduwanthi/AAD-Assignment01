@@ -1,0 +1,45 @@
+Serializable And Deserializable
+
+Introduction
+
+Complex data structures, such as objects, can be transformed into a format that is
+readily saved and conveyed by using the procedures of serialization and
+deserialization. These formats can then be rebuilt into their original form. Java defines
+serialization as the process of transforming an object into a byte stream and
+deserialization as the opposite process, in which the original object is recreated using
+the byte stream.
+
+Advantages of Serializable and Deserializable
+
+The primary benefits of serialization and deserialization include:
+01.Persistence: Objects can be saved to files or databases and later restored.
+02.Communication: Serialized objects can be sent over a network between 03.
+different components of a distributed system.
+03.
+Caching: Serialized objects can be cached to improve performance by
+avoiding repeated object creation.
+04.
+Deep Copy: Serialization can be used to create a deep copy of an object.
+
+Mechanism
+
+The mechanism of serialization and deserialization in Java involves the Serializable
+interface and the ObjectOutputStream and ObjectInputStream classes.
+01.
+Serialization:
+An object is converted into a byte stream using the ObjectOutputStream class.
+The object must implement the Serializable interface.
+Fields marked as transient are not serialized.
+02.
+Deserialization:
+The byte stream is converted back into an object using the ObjectInputStream
+class.The deserialization process reconstructs the object, including its non-transient
+fields.
+
+Code Explain
+
+A user's name, age, and password are among the attributes that the User class is
+intended to represent. To make serialization possible, it implements the Serializable
+interface. By not storing sensitive data, the password field is designated as transitory,
+improving security by preventing serialization. For logging and debugging reasons,
+the toString() function offers a textual representation of the User object.
